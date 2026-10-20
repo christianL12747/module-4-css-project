@@ -1,43 +1,190 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+css
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+/* General styles and box model */
+* {
+  box-sizing: border-box;
+}
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+html {
+  scroll-behavior: smooth;
+}
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #263746;
+  background-color: #ffffff;
+}
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+/* Navigation using Flexbox */
+.site-header {
+  background-color: #142b3d;
+  color: #ffffff;
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a:hover {
+  color: #61d6b5;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, #142b3d, #28566a);
+  color: #ffffff;
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: #61d6b5;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  margin: 18px 0;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #61d6b5;
+  color: #142b3d;
+  padding: 12px 24px;
+  margin-top: 18px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #ffffff;
+}
+
+/* Main content and spacing */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.section h2 {
+  color: #142b3d;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.skills-section {
+  max-width: none;
+  background-color: #f1f6f8;
+  text-align: center;
+}
+
+.skills-section h2 {
+  margin-bottom: 28px;
+}
+
+/* Flexbox cards */
+.cards {
+  max-width: 1052px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 26px;
+  border-radius: 10px;
+  flex: 1;
+  text-align: left;
+  box-shadow: 0 4px 16px rgba(20, 43, 61, 0.08);
+}
+
+.card h3 {
+  color: #267d70;
+}
+
+.contact-section {
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #142b3d;
+  color: #ffffff;
+  text-align: center;
+  padding: 22px;
+}
+
+/* Keyboard accessibility */
+a:focus-visible {
+  outline: 3px solid #e49b46;
+  outline-offset: 4px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 18px;
+  }
+
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .section {
+    padding: 42px 20px;
+  }
+}
