@@ -1,0 +1,115 @@
+css
+
+/* General page styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #263238;
+  background-color: #f4f7fb;
+}
+
+/* Header */
+.site-header {
+  background-color: #17365d;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.site-header h1 {
+  margin-bottom: 10px;
+}
+
+/* Navigation using Flexbox */
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  background-color: #24558a;
+  padding: 15px;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Main content */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.intro,
+.skills,
+.contact {
+  margin-bottom: 35px;
+}
+
+h2 {
+  color: #17365d;
+}
+
+/* Flexbox card layout */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 250px;
+  padding: 22px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #d8e1ec;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  color: #24558a;
+}
+
+/* Footer */
+footer {
+  background-color: #17365d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive design for phones */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 28px 15px;
+  }
+
+  .site-header h1 {
+    font-size: 26px;
+  }
+
+  .navigation {
+    gap: 15px;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+}
